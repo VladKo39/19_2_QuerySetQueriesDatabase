@@ -1,0 +1,26 @@
+(.venv) PS D:\Python\Training\Urban\19_2_QuerySetQueriesDatabase\GamesStore> python manage.py shell
+>>> buyer1= Buyer.objects.create(name='Ilya', ballance=1500.05, age=24)
+
+>>> buyer2= Buyer.objects.create(name='Terminator2000', ballance=42.15,
+...                                         age=52)
+
+>>> buyer3=Buyer.objects.create(name='Ubivator432', ballance=0.5, age=16)
+>>> game1 = Games.objects.create(title='Cyberpunk 2077', cost=31, size=46.2,
+...                                     description='Game of the year',
+...                                     age_limited=True)
+
+>>> game2 = Games.objects.create(title='Mario', cost=5, size=0.5,
+...                                 description='Old Game')
+
+>>> game3 = Games.objects.create(title='Hitman', cost=12, size=36.6,
+...                                  description='Who kills Mark?',
+...                                  age_limited=True)
+
+>>> Games.objects.get(id=7).buyer.set((buyer1,buyer2))
+>>> Games.objects.get(id=8).buyer.set((buyer2,buyer3))
+>>> Games.objects.get(id=9).buyer.set((buyer1,buyer2))
+>>> exit
+Use exit() or Ctrl-Z plus Return to exit
+>>> ^Z
+
+
